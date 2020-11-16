@@ -14,16 +14,18 @@
         color:white;
         font-family: Arial, Helvetica, sans-serif;
         line-height: 1.6;
+        scroll-behavior: smooth;
+        scroll-padding-top: 50px;
     }
 
     h1, h2, h3, h4, h5, h6 {
       text-align: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-weight: 40;
-      line-height: 16px;
+      line-height: 90px;
     }
 
-    h1{font-size: 200px;}
+    h1{font-size: 200px; line-height: 16px;}
     h2{font-size: 100px;}
     h3{font-size: 50px;}
     h4{font-size: 25px;}
@@ -64,6 +66,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 20px;
       text-align: center;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
     }
 
     .section{
@@ -78,7 +81,7 @@
     }
 
     .background{
-      filter: saturate(0%) brightness(20%) blur(1px);
+      filter: saturate(50%) brightness(25%) blur(5px);
       transform: scale(1.1);
       position:absolute;
       top: 0px;
@@ -101,28 +104,116 @@
       margin-left: 10%;
       margin-right: 10%;
     }
+
+    @keyframes slideInFromBottom {
+      0% {
+        transform: translateY(10px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .pluginsSection{
+      display:grid;
+      grid-template-columns: repeat( auto-fit, minmax(33.33333%, 1fr) );
+      margin: 0 auto;
+      border: 3px dotted white;
+    }
+
+    .pluginsSectionItem{
+      padding: 20px;
+    }
+
+    .pluginsSectionItem img{
+      width: 100%;
+      z-index: -1;
+      transition: all .2s ease-in-out;
+    }
+
+    .pluginsSectionItem:hover img{
+      filter: brightness(150%);
+    }
+
+    .pluginsSectionItem .pluginDesc a{
+      text-decoration: none;
+      color:aqua;
+    }
+
+    .pluginsSectionItem .pluginDesc a:visited{
+      text-decoration: none;
+      color:pink;
+    }
+
+    .pluginsSectionItem .pluginDesc{
+      position:absolute;
+      width: 40%;
+      padding: 10px;
+      opacity: 0;
+      transition: all .2s ease-in-out;
+      z-index: 1;
+      background: rgba(0,0,0,0.8);
+    }
+
+    .pluginsSectionItem:hover .pluginDesc{
+      opacity: 1;
+    }
   </style>
   <body>
     <script src="page.js"></script>
 
-    <div class="section pad">
-      <img class="background" src="background big.png">
+    <div id="homeSection" class="section pad">
+      <img class="background" src="BGBubbles.png">
       <div class = "foreground">
-        <h1>Welcome</h1>
+        <h1 style="animation: slideInFromBottom 0.7s ease-out 0s 1;">Hi</h1>
+        <h3 style="animation: slideInFromTop 0.7s ease-out 0s 1;">Take a look at my plugins :)</h3>
       </div>
     </div>
     
     <div class="menu">
-        <a class = "toolbarItem" href="#">Home</a>
-        <a class = "toolbarItem" href="#">Plugins</a>
-        <a class = "toolbarItem" href="#">About</a>
+        <a class = "toolbarItem" href="#homeSection">Home</a>
+        <a class = "toolbarItem" href="#pluginsHeader">Plugins</a>
+        <a class = "toolbarItem" href="#aboutHeader">About</a>
     </div>
 
     <div class="section pad">
-      <img class="background" src="stripes.png">
+      <img class="background" src="BGStripes.png">
       <div class = "foreground">
-        <h2>Header</h2>
-        <p></p>
+        <h2 id="pluginsHeader">Plugins</h2>
+        <div class="pluginsSection">
+
+          <span class="pluginsSectionItem">
+            <span class="pluginDesc">
+              <h4>Digital Distortion</h4>
+              <p>This deceptively simple single-knobed distortion plugin folds the wave onto itself to draw out noisy, metalic timbres. It's the perfect tool when you need to put a bit of high end in that bass, or want to infuse a bit of grit in your sound!</p>
+              <a href="#">Learn More</a>
+            </span>
+            <img src="PLUGDD.png"/>
+          </span>
+          
+          <span class="pluginsSectionItem">
+            <span class="pluginDesc">
+              <h4>Infinigain</h4>
+              <p>Have you ever wanted to turn up your signal by 60+ dB? No? Well you might want to try; sometimes a signal is too quiet to turn up without using 10 gain plugins at once. You can also compess the heck out of sounds by throwing a limiter after this plugin! The possibilities are endless...</p>
+              <a href="#">Learn More</a>
+            </span>
+            <img src="PLUGInfinigain.png"/>
+          </span>
+
+        </div>
       </div>
     </div>
 
@@ -132,7 +223,8 @@
 
     <div class="section pad whiteBG">
       <div class = "foreground">
-        <p></p>
+        <h2 id="aboutHeader">About</h2>
+        <p>I'm all about xyz, and i love [undefiend]!</p>
       </div>
     </div>
     
