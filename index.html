@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <HMTL>
   <head>
+    <title>Woowoo's Plugins</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="VST, PLUGINS, AUDIO, WOOWOO">
     <meta name="description" content="A repository of audio plugins made by myself">
@@ -54,7 +55,6 @@
     }
 
     .toolbarItem:hover{
-      font-size: 21px;
       background: #333;
     }
 
@@ -63,7 +63,6 @@
       top:0px;
       left:0px;
       width:100%;
-      height: 40px;
       margin: 0;
       padding: 0;
       background: linear-gradient(#000, #333);
@@ -96,6 +95,7 @@
       width: 100%;
       -webkit-user-select: none;
       -webkit-mask-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0));
+      mask-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0));
     }
 
     .whiteBG{
@@ -134,49 +134,56 @@
     }
 
     .pluginsSection{
-      display:grid;
-      grid-template-columns: repeat( auto-fit, minmax(33.33333%, 1fr) );
-      margin: 0 auto;
       border: 3px dotted white;
+      padding: 10px;
     }
 
     .pluginsSectionItem{
-      padding: 20px;
+      margin: 50px;
     }
 
     .pluginsSectionItem img{
       width: 100%;
-      z-index: -1;
       transition: all .2s ease-in-out;
+      z-index: -1;
     }
 
-    .pluginsSectionItem:hover img{
-      filter: brightness(150%);
-    }
-
-    .pluginsSectionItem .pluginDesc a{
-      text-decoration: none;
-      color:aqua;
-    }
-
-    .pluginsSectionItem .pluginDesc a:visited{
-      text-decoration: none;
-      color:pink;
-    }
-
-    .pluginsSectionItem .pluginDesc{
-      position:absolute;
-      width: 40%;
+    .pluginDesc{
+      font-size: 1.5vw;
       padding: 10px;
-      opacity: 0;
+      margin: 10px;
+      background: rgba(0,0,0,0.9);
       transition: all .2s ease-in-out;
       z-index: 1;
-      background: rgba(0,0,0,0.8);
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 900px) {
+        .pluginDesc{
+          opacity: 1;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        .pluginDesc{
+          position: absolute;
+          width: 60%;
+          opacity: 0;
+        }
+
+        .pluginsSectionItem:hover img{
+          filter: brightness(150%) blur(5px);
+        }
+    }
+
+    .pluginDesc a{
+      text-decoration: underline;
+      color:rgb(212, 219, 255);
     }
 
     .pluginsSectionItem:hover .pluginDesc{
       opacity: 1;
     }
+
   </style>
   <body>
     <script src="page.js"></script>
@@ -201,23 +208,23 @@
         <h2 id="pluginsHeader">Plugins</h2>
         <div class="pluginsSection">
 
-          <span class="pluginsSectionItem">
-            <span class="pluginDesc">
+          <div class="pluginsSectionItem">
+            <div class="pluginDesc">
               <h4>Digital Distortion</h4>
               <p>This deceptively simple single-knobed distortion plugin folds the wave onto itself to draw out noisy, metalic timbres. It's the perfect tool when you need to put a bit of high end in that bass, or want to infuse a bit of grit in your sound!</p>
-              <a href="#">Learn More</a>
-            </span>
+              <a href="#"><strong>Learn More</strong></a>
+            </div>
             <img src="PLUGDD.png"/>
-          </span>
+          </div>
           
-          <span class="pluginsSectionItem">
-            <span class="pluginDesc">
+          <div class="pluginsSectionItem">
+            <div class="pluginDesc">
               <h4>Infinigain</h4>
               <p>Have you ever wanted to turn up your signal by 60+ dB? No? Well you might want to try; sometimes a signal is too quiet to turn up without using 10 gain plugins at once. You can also compess the heck out of sounds by throwing a limiter after this plugin! The possibilities are endless...</p>
-              <a href="#">Learn More</a>
-            </span>
+              <a href="#"><strong>Learn More</strong></a>
+            </div>
             <img src="PLUGInfinigain.png"/>
-          </span>
+          </div>
 
         </div>
       </div>
@@ -230,7 +237,7 @@
     <div class="section pad whiteBG">
       <div class = "foreground">
         <h2 id="aboutHeader">About</h2>
-        <p>I'm all about xyz, and i love [undefiend]!</p>
+        <p>Not sure what to put here yet.</p>
       </div>
     </div>
     
