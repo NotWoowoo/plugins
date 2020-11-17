@@ -15,5 +15,8 @@ document.onload = function(){
 
 document.addEventListener("DOMContentLoaded", main);
 function main(){
-    //nothing yet
+    document.getElementById("toolbar").innerHTML = `
+    <a class = "toolbarItem" href="./index.html#homeSection">Home</a>
+    <a class = "toolbarItem" href="./index.html#pluginsHeader">Plugins</a>
+    <a class = "toolbarItem" href="./index.html#aboutHeader">About</a>`;
 }
