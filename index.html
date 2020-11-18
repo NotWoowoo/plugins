@@ -9,58 +9,56 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <style>
-    .pluginsSection{
-      border: 3px dotted white;
-      padding: 10px;
-    }
+      #pluginSection{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(500px, 1fr) );
+        grid-gap: 40px;
+        border: 3px dotted white;
+        justify-items: center;
+        padding: 10px;
+      }
 
-    .pluginsSectionItem{
-      margin: 50px;
-    }
+      .pluginCard{
+        position: relative;
+        margin: 30px;
+        width: 100%;
+        text-align: center;
+      }
 
-    .pluginsSectionItem img{
-      width: 100%;
-      transition: all .2s ease-in-out;
-      z-index: -1;
-    }
+      .pluginCard img{
+        width: 100%;
+        transition: all .2s ease-in-out;
+        z-index: -1;
+      }
 
-    .pluginDesc{
-      font-size: 1.5vw;
-      padding: 10px;
-      margin: 10px;
-      background: rgba(0,0,0,0.9);
-      transition: all .2s ease-in-out;
-      z-index: 1;
-      border-radius: 20px;
-    }
+      .pluginCard:hover img{
+        filter: brightness(0.2) blur(5px);
+      }
 
-    @media screen and (min-width: 0px) and (max-width: 900px) {
-        .pluginDesc{
-          opacity: 1;
-        }
-    }
+      .pluginDesc{
+        position: absolute;
+        top: -75px;
+        padding: 30px;
+        z-index: 1;
+        transition: all .2s ease-in-out;
+        opacity: 0;
+      }
 
-    @media screen and (min-width: 900px) {
-        .pluginDesc{
-          position: absolute;
-          width: 60%;
-          opacity: 0;
-        }
+      .pluginCard:hover .pluginDesc{
+        opacity: 1;
+      }
 
-        .pluginsSectionItem:hover img{
-          filter: grayscale(50%) brightness(150%) blur(5px);
-        }
-    }
+      @media screen and (min-width: 1100px) {
+          .pluginDesc{
+            font-size: 1vw;
+          }
+      }
 
-    .pluginDesc a{
-      text-decoration: underline;
-      color:rgb(212, 219, 255);
-    }
-
-    .pluginsSectionItem:hover .pluginDesc{
-      opacity: 1;
-    }
-
+      .pluginDesc a{
+        text-decoration: underline;
+        color: cyan;
+      }
   </style>
   <body>
     <script src="page.js"></script>
@@ -80,9 +78,9 @@
       <div class = "foreground">
         <br />
         <h2 id="pluginsHeader">Plugins</h2>
-        <div class="pluginsSection">
+        <div id="pluginSection">
 
-          <div class="pluginsSectionItem">
+          <div class="pluginCard">
             <div class="pluginDesc">
               <h4>Digital Distortion</h4>
               <p>This deceptively simple single-knobed distortion plugin folds the wave onto itself to draw out noisy, metalic timbres. It's the perfect tool when you need to put a bit of high end in that bass, or want to infuse a bit of grit in your sound!</p>
@@ -91,7 +89,7 @@
             <img src="PLUGDD.png"/>
           </div>
           
-          <div class="pluginsSectionItem">
+          <div class="pluginCard">
             <div class="pluginDesc">
               <h4>Infinigain</h4>
               <p>Have you ever wanted to turn up your signal by 60+ dB? No? Well you might want to try; sometimes a signal is too quiet to turn up without using 10 gain plugins at once. You can also compess the heck out of sounds by throwing a limiter after this plugin! The possibilities are endless...</p>
