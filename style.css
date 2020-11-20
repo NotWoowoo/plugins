@@ -112,6 +112,17 @@
       }
     }
 
+    @keyframes slideInFromBottomLogo {
+      0% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, 0px);
+        opacity: 1;
+      }
+    }
+
     @keyframes slideInFromTop {
       0% {
         transform: translateY(-10px);
