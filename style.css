@@ -55,7 +55,7 @@
       width:100%;
       margin: 0;
       padding: 0;
-      background: linear-gradient(#000, #333);
+      background: #000;
       /*background: linear-gradient(rgb(255, 105, 105), rgb(230, 67, 67));*/
       z-index: 99;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -112,7 +112,7 @@
       }
     }
 
-    @keyframes slideInFromBottomLogo {
+    @keyframes slideInFromBottomAndCenter {
       0% {
         transform: translate(-50%, 10px);
         opacity: 0;
@@ -130,6 +130,17 @@
       }
       100% {
         transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromTopAndCenter {
+      0% {
+        transform: translate(-50%, -10px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, 0);
         opacity: 1;
       }
     }
