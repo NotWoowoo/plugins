@@ -99,6 +99,21 @@
       margin-left: 10%;
       margin-right: 10%;
     }
+	
+	#center-section{
+		padding: 20px;
+		/*text-align: center;*/
+	}
+	
+	#center-section a:link {
+	  color: aqua;
+	}
+	
+	#center-section a:visited {
+	  color: pink;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
 
     @keyframes slideInFromBottom {
       0% {
