@@ -233,7 +233,7 @@ def make_about():
         div(
             h2('About These Plugins'),
             div(
-            p('Hey there, I\'m not_woowoo! I made these plugins, because I like music production and programming. By combining the two, I hope to reach deeper into the space of sonic possibilities and push the boundaries of what’s possible in music. Plus, developing plugins is just a lot of fun. I’m sharing these tools so others can use them too, and, of course, it’d be awesome to see them used in action by others.'),
+            p('Hey there, I\'m not_woowoo! I made these plugins, because I like', a('music production', href='https://soundcloud.com/notwoowoo'), 'and programming. By combining the two, I hope to reach deeper into the space of sonic possibilities and push the boundaries of what’s possible in music. Plus, developing plugins is just a lot of fun. I’m sharing these tools so others can use them too, and, of course, it’d be awesome to see them used in action by others.'),
                 p('Everything is free, but I\'m thinking of adding a "pay what you want (including free)" model at some point in the future.'),
                 p('All plugins (that I haven\'t lost the code for) are open source. If you want to see how they work, modify them, report bugs, or help out, then feel free to check out the source code on GitHub.'),
                 class_='about-text',
