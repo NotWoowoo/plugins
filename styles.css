@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --dark: #1c1c1c;
+    --dark2: #4a5568;
+    --light1: #bbb;
+    --light2: #ddd;
+    --light3: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    line-height: 1.6;
+    font-size: 15px;
+    background: var(--dark);
+    color: var(--light2);
+}
+
+hr {
+    color: rgba(255, 255, 255, 0.1);
+    border-top: none;
+}
+
+/* nav */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+    padding: 0 2rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-left img {
+    width: 65px;
+}
+
+.nav-left h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    background: linear-gradient(135deg, white 0%, var(--light2) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-right a {
+    color: var(--light1);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position:relative;
+}
+
+.nav-right a:hover {
+    color: var(--light3);
+}
+
+.nav-right a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, white, var(--light2));
+    transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after {
+    width: 100%;
+}
+
+/* hero */
+
+.hero {
+    width: 100%;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    margin-top: 100px;
+    padding: 2rem 2rem;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--dark2);
+    max-width: 630px;
+    line-height: 1.7;
+}
+
+/* plugins */
+
+.plugins {
+    padding: 2rem 2rem;
+}
+
+.plugins-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+}
+
+.plugin-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    transition: all 0.3s ease;
+}
+
+.plugin-header {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+}
+
+.plugin-desc {
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .plugin-desc {
+        flex-direction: column;
+    }
+}
+
+.plugin-desc-content {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.plugin-header h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+}
+
+.plugin-header .plugin-version {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--light1);
+    padding: 4px 8px;
+    background: #38393c;
+    border-radius: 6px;
+}
+
+.plugin-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.plugin-visual {
+    /* background: red; */
+    /* min-width: 400px; */
+    /* height: 200px; */
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+.audio-demo {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    width: 100%;
+}
+
+.audio-demo h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--light1);
+    font-weight: 500;
+}
+
+.audio-chain {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.audio-chain .chain-arrow {
+    font-size: 30px;
+    color: var(--light1);
+    font-weight: 700;
+}
+
+.audio-chain .audio-player {
+    /* border: 1px solid rgb(255, 255, 255, 0.1); */
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--dark);
+}
+
+.audio-chain .audio-player p {
+    text-align:center;
+    color: var(--light2);
+    font-weight:500;
+    font-size: 16px;
+    padding-bottom: 1rem;
+}
+
+.plugin-download {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+}
+
+.plugin-formats {
+    display: flex;
+    gap: 1rem;
+}
+
+.plugin-formats span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--light1);
+    padding: 4px 8px;
+    background: #38393c;
+    border-radius: 6px;
+}
+
+.plugin-formats .format-separator {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    padding: 0;
+}
+
+.plugin-download-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.plugin-download-btns a {
+    color: var(--light1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.plugin-download-btns a:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.15) 100%);
+    color: white;
+}
+
+.plugin-download-btns .btn-download {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    color: white;
+}
+
+/* about */
+
+.about {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    width: 100%;
+    padding: 2rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.about-content p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--dark2);
+    max-width: 700px;
+}
+
+.about-details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail {
+    display: flex;
+    gap: 1rem;
+    color: var(--dark2);
+}
+
+.detail-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    min-width: 100px;
+    color: #888;
+}
+
+/* mock plugin */
+
+.mock-plugin {
+    width: 100%;
+    max-width: 280px;
+}
+
+.plugin-window {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.window-bar {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #aaa;
+    font-family: 'JetBrains Mono', monospace;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plugin-interface {
+    padding: 1.5rem;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.knobs {
+    display: flex;
+    gap: 1rem;
+}
+
+.knob {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.knob::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(180deg, #fff 0%, #ccc 100%);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.knob.small {
+    width: 30px;
+    height: 30px;
+}
+
+.display {
+    flex: 1;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.waveform {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    gap: 2px;
+}
+
+.wave-line {
+    flex: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.wave-line:nth-child(1) { height: 60%; }
+.wave-line:nth-child(2) { height: 80%; }
+.wave-line:nth-child(3) { height: 40%; }
+
