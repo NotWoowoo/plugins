@@ -6,10 +6,10 @@ def make_page(*vargs):
         head(
             meta(charset='UTF-8'),
             meta(name='viewport', content='width=device-width, initial-scale=1.0'),
-            meta(name='description', content='The home of some audio plugins and other tools for music production.'),
+            meta(name='description', content='The home of some audio plugins and other tools for music production I\'ve made.'),
 
             link(rel='icon', href='res/logo.png', type='img/png'),
-            meta(name='og:image', content='res/logo.png'),
+            meta(name='og:image', content='https://raw.githubusercontent.com/NotWoowoo/plugins/master/res/logo.png'),
 
             title('not_woowoo\'s audio_tools'),
             link(rel='stylesheet', href='styles.css'),
