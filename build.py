@@ -194,8 +194,8 @@ def make_plugins():
                 ),
                 'res/hcomb.png',
                 [
-                    ('Ting noise', 'res/no_hcomb_ting.mp3', 'Honeycombed Ting Noise', 'res/hcomb_ting.mp3'),
-                    ('Drum Loop', 'res/no_hcomb_drums.mp3', 'Honeycombed Drum loop', 'res/hcomb_drums.mp3')
+                    ('Ting noise', 'res/no_hcomb_ting.mp3', 'Honey_combed Ting Noise', 'res/hcomb_ting.mp3'),
+                    ('Drum Loop', 'res/no_hcomb_drums.mp3', 'Honey_combed Drum loop', 'res/hcomb_drums.mp3')
                 ],
                 ['Clap', 'VST3'],
                 ['Windows', 'Linux'],
@@ -241,7 +241,7 @@ def make_about():
             div(
                 div(
                     span('Built with:', class_='detail-label'),
-                    span('C++ (but more C-like), CLAP, VST3'),
+                    span('C++ (but more C-like), CLAP, VST3,', a('CPLUG', href='https://github.com/Tremus/CPLUG/')),
                     class_='detail'
                 ),
                 div(
